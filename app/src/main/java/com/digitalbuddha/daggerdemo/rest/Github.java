@@ -15,7 +15,7 @@ import retrofit.http.Path;
 public interface Github {
 
     @GET("/users/{userName}/repos")
-    List<Repo> listRepos(@Path("userName") String user);
+    List<Repo> repos(@Path("userName") String user);
 
     @GET("orgs/square")
     Org getSquare();

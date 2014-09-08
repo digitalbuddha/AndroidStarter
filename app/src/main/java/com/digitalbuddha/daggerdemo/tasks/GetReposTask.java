@@ -13,17 +13,14 @@ import javax.inject.Inject;
 public class GetReposTask extends InjectTask{
 
     @Inject
-    public Github service;
+    public Github api;
     public String userName;
     public List<Repo> repos;
 
-    @Inject
-    public GetReposTask() {
-    }
 
 
     @Override
     protected void run() {
-        repos = service.listRepos(userName);
+        repos = api.repos(userName);
     }
 }

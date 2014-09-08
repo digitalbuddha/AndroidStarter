@@ -7,14 +7,14 @@ import com.digitalbuddha.daggerdemo.dagger.ForActivity;
 import javax.inject.Inject;
 
 import co.touchlab.android.threading.tasks.TaskQueue;
+import de.greenrobot.event.EventBus;
 
 
-public abstract class InjectTask implements TaskQueue.Task {
+public abstract class InjectTask extends TaskQueue.Task {
 
     @Inject
     @ForActivity
     Context context;
-
 
 
     @Override
@@ -27,5 +27,11 @@ public abstract class InjectTask implements TaskQueue.Task {
     @Override
     public boolean handleError(Exception e) {
         return false;
+    }
+
+    @Override
+    protected void onComplete() {
+        super.onComplete();
+        EventBus.getDefault().post(this);
     }
 }
