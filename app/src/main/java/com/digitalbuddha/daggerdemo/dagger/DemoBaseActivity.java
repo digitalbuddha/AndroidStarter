@@ -33,6 +33,7 @@ public abstract class DemoBaseActivity extends FragmentActivity {
     private ObjectGraph activityGraph;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

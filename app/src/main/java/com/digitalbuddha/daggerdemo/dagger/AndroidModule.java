@@ -20,6 +20,7 @@ import android.location.LocationManager;
 
 import com.digitalbuddha.daggerdemo.DemoApplication;
 import com.digitalbuddha.daggerdemo.rest.Github;
+import com.path.android.jobqueue.JobManager;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -76,6 +77,13 @@ public class AndroidModule {
     Github provideGithub(RestAdapter restAdapter) {
         return restAdapter.create(Github.class);
     }
+
+    @Provides
+    @Singleton
+    JobManager provideJobManager() {
+        return new JobManager(provideApplicationContext());
+    }
+
 
     @Provides
     @Singleton

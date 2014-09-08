@@ -5,8 +5,9 @@ import android.widget.EditText;
 
 import com.digitalbuddha.daggerdemo.activitygraphs.R;
 import com.digitalbuddha.daggerdemo.dagger.DemoBaseActivity;
-import com.digitalbuddha.daggerdemo.tasks.GetReposTask;
+import com.digitalbuddha.daggerdemo.job.GetReposJob;
 import com.digitalbuddha.daggerdemo.utils.JsonParser;
+import com.path.android.jobqueue.JobManager;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -14,13 +15,14 @@ import javax.inject.Provider;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import co.touchlab.android.threading.tasks.TaskQueue;
 
 
 //Composition over Inheritence
 public class GithubActivity extends DemoBaseActivity {
     @Inject
-    Provider<GetReposTask> repos; //Provider will give new instane everytime .get() is called
+    Provider<GetReposJob> repoJob; //Provider will give new instane everytime .get() is called
+    @Inject
+    public JobManager jobManager;
     @InjectView(R.id.editText)
     EditText userName;
     @Inject ActivityTitleController activityTitleController;  //Helper class for activities, for example to init action bar.
@@ -38,14 +40,15 @@ public class GithubActivity extends DemoBaseActivity {
 
     @OnClick(R.id.button) //cleaner than listeners
     public void getNumberOfReposForUser() {
-        GetReposTask getReposTask = repos.get(); //since we can inject activity context directly into task, constructor to pass context is no longer needed
-        getReposTask.userName = userName.getText().toString(); //Set fields on task directly from screen, less copying values=less mistakes
-        TaskQueue.execute(this, getReposTask); //same as it ever was.
+        GetReposJob job = repoJob.get();//since we can inject activity context directly into task, constructor to pass context is no longer needed
+        job.userName = userName.getText().toString(); //Set fields on task directly from screen, less copying values=less mistakes
+        jobManager.addJobInBackground(job);
+
     }
 
 
-    public void onEventMainThread(GetReposTask task) {
-        String repos = jsonParser.convertObjectToJSON(task.repos);
+    public void onEventMainThread(GetReposJob job) {
+        String repos = jsonParser.convertObjectToJSON(job.repos);
         userName.setText(repos);
     }
 
