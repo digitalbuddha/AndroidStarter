@@ -41,7 +41,7 @@ public class GetReposJob extends Job {
     @Override
     public void onRun() throws Throwable {
         repos = api.repos(userName);
-        EventBus.getDefault().post(this);
+        EventBus.getDefault().post(this); //post the job instead of making dummy event pojos
     }
 
     //

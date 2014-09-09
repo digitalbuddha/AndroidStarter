@@ -13,6 +13,7 @@ import javax.inject.Inject;
  * Created by Nakhimovich on 6/13/14.
  */
 public class JsonParser {
+    //Jackson = Faster than json just not as cool
     @Inject
     public ObjectMapper mapper;
 
@@ -23,6 +24,7 @@ public class JsonParser {
             throw new RuntimeException(e);
         }
     }
+
 
     public Object convertJsonToObject(JSONObject jsonObject, Class clazz) {
         try {

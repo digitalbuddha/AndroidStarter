@@ -7,7 +7,6 @@ import com.digitalbuddha.daggerdemo.activitygraphs.R;
 import com.digitalbuddha.daggerdemo.dagger.DemoBaseActivity;
 import com.digitalbuddha.daggerdemo.job.GetReposJob;
 import com.digitalbuddha.daggerdemo.utils.JsonParser;
-import com.path.android.jobqueue.JobManager;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -17,15 +16,15 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 
-//Composition over Inheritence
+//MMM...Composition over Inheritence
 public class GithubActivity extends DemoBaseActivity {
     @Inject
-    Provider<GetReposJob> repoJob; //Provider will give new instane everytime .get() is called
-    @Inject
-    public JobManager jobManager;
+    Provider<GetReposJob> repoJob; //Provider will give new instance everytime .get() is called
+
     @InjectView(R.id.editText)
     EditText userName;
-    @Inject ActivityTitleController activityTitleController;  //Helper class for activities, for example to init action bar.
+    @Inject
+    ActivityTitleController activityTitleController;  //Helper class for activities, for example to init action bar.
     @Inject
     JsonParser jsonParser;
 
@@ -40,17 +39,14 @@ public class GithubActivity extends DemoBaseActivity {
 
     @OnClick(R.id.button) //cleaner than listeners
     public void getNumberOfReposForUser() {
-        GetReposJob job = repoJob.get();//since we can inject activity context directly into task, constructor to pass context is no longer needed
-        job.userName = userName.getText().toString(); //Set fields on task directly from screen, less copying values=less mistakes
+        GetReposJob job = repoJob.get();
+        job.userName = userName.getText().toString(); //Set fields on job directly from screen, less copying values=less mistakes, maybe move to view models at some point
         jobManager.addJobInBackground(job);
 
     }
-
 
     public void onEventMainThread(GetReposJob job) {
         String repos = jsonParser.convertObjectToJSON(job.repos);
         userName.setText(repos);
     }
-
-
 }

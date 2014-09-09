@@ -19,9 +19,12 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.digitalbuddha.daggerdemo.DemoApplication;
+import com.path.android.jobqueue.JobManager;
 
 import java.util.Arrays;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import dagger.ObjectGraph;
 import de.greenrobot.event.EventBus;
@@ -32,7 +35,8 @@ import de.greenrobot.event.EventBus;
 public abstract class DemoBaseActivity extends FragmentActivity {
     private ObjectGraph activityGraph;
 
-
+    @Inject
+    public JobManager jobManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
