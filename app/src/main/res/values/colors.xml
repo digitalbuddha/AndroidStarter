@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="theme_blue">#0030ff</color>
+    <color name="theme_background">#f5f5f5</color>
+    <color name="grey_text">#7d7979</color>
+    <color name="white">#ffffff</color>
+    <color name="white_opacity">#ccffffff</color>
+    <color name="background_holo_light">#fff3f3f3</color>
+
+    <!--blues-->
+    <color name="blue7">#04219f</color>
+    <color name="blue6">#022ad8</color>
+    <color name="blue5">#0030ff</color>
+    <color name="blue4">#1f48f7</color>
+    <color name="blue3">#6b87ff</color>
+    <color name="blue2">#aebcf9</color>
+    <color name="blue1">#e2e7fc</color>
+
+    <color name="biketravel">#ffdd5ec7</color>
+    <color name="lesscoffee">#fff1fc3d</color>
+    <color name="lesscocktail">#ff40c239</color>
+    <color name="lessclothes">#ff35effb</color>
+    <color name="secondhandclothes">#ff167eb7</color>
+    <color name="entertainathome">#ffe01f1f</color>
+    <color name="budgetchristmas">#ff0d9038</color>
+    <color name="takelunch">#ffeb2b45</color>
+    <color name="lesstakeout">#ffe9238e</color>
+    <color name="cookfood">#ffff4d74</color>
+    <color name="refurbishedtech">#ff06f6cd</color>
+    <color name="suit">#ff167f24</color>
+    <color name="makecoffeeathome">#ff8f11fe</color>
+    <color name="walknotaxi">#fff6f344</color>
+    <color name="lessshoes">#ff5f37b2</color>
+    <color name="dailychange">#ff3645dd</color>
+    <color name="tie">#ff29a196</color>
+    <color name="lesssweettreats">#ffd01b19</color>
+    <color name="drinkless">#ff5c61ee</color>
+    <color name="homemadegifts">#fffa8b9d</color>
+    <color name="planeticket">#ff2c7580</color>
+    <color name="lessproducts">#ffbd10e0</color>
+    <color name="lessshopping">#ff7a2996</color>
+    <color name="cancelunreadsubscriptions">#ff1a05f2</color>
+    <color name="creditcard">#fff15151</color>
+    <color name="carpool">#ff282a9e</color>
+    <color name="lessamazon">#ff42a691</color>
+    <color name="moviesathome">#ff4d4848</color>
+    <color name="buyinbulk">#ff4d9eed</color>
+    <color name="homegym">#ff2f21d3</color>
+    <color name="excerciseforfree">#ff19375a</color>
+    <color name="subscriptionsforregularmags">#ffbb283a</color>
+</resources>
