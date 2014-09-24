@@ -17,8 +17,6 @@ package com.digitalbuddha.daggerdemo;
 
 import android.app.Application;
 
-import com.digitalbuddha.daggerdemo.dagger.AndroidModule;
-
 import java.util.Arrays;
 import java.util.List;
 

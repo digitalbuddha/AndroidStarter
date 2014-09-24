@@ -2,8 +2,6 @@ package com.digitalbuddha.daggerdemo.job;
 
 import android.content.Context;
 
-import com.digitalbuddha.daggerdemo.dagger.ForActivity;
-import com.digitalbuddha.daggerdemo.models.Repo;
 import com.digitalbuddha.daggerdemo.rest.Github;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
