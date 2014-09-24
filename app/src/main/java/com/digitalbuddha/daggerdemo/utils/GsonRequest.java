@@ -49,19 +49,15 @@ public class GsonRequest<T> extends Request<T> {
     public int getSoftTTLDefault() {
         return softTTLDefault;
     }
-
     public void setSoftTTLDefault(int softTTLDefault) {
         this.softTTLDefault = softTTLDefault;
     }
-
     public int getHardTTLDefault() {
         return hardTTLDefault;
     }
-
     public void setHardTTLDefault(int hardTTLDefault) {
         this.hardTTLDefault = hardTTLDefault;
     }
-
     private int softTTLDefault=0;
     private int hardTTLDefault=0;
     private boolean cacheHit;
@@ -167,6 +163,5 @@ public class GsonRequest<T> extends Request<T> {
             cacheHit = false;
         }
         Log.d("Volley",tag);
-
     }
 }
