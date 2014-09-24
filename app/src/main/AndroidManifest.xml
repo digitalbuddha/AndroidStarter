@@ -14,16 +14,25 @@
         android:name="com.digitalbuddha.daggerdemo.DemoApplication"
         android:label="@string/app_name">
 
+       \
         <activity
-            android:name="com.digitalbuddha.daggerdemo.ui.GithubActivity"
+            android:name="com.digitalbuddha.daggerdemo.ui.RedditAsyncActivity"
             android:label="@string/title_activity_post">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT" />
+        </activity> <activity
+            android:name="com.digitalbuddha.daggerdemo.ui.RedditSyncActivity"
+            android:label="@string/title_activity_post">
 
-            </intent-filter>
+        </activity>  <activity
+            android:name="com.digitalbuddha.daggerdemo.ui.RedditTaskActivity"
+            android:label="@string/title_activity_post">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.DEFAULT" />
+
+        </intent-filter>
         </activity>
     </application>
 

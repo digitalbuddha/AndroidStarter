@@ -39,6 +39,7 @@ dependencies
             compile 'com.squareup.retrofit:retrofit:1.6.1'
             compile 'com.jakewharton:butterknife:5.1.1'
             compile 'com.path:android-priority-jobqueue:1.1'
+            compile 'com.mcxiaoke.volley:library:1.0.6'
 
             compile(group: 'co.touchlab', name: 'magicthreads', version: '0.2', classifier: 'release')
             compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'

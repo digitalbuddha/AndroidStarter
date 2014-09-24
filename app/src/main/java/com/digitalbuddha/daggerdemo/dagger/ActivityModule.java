@@ -18,7 +18,9 @@ package com.digitalbuddha.daggerdemo.dagger;
 import android.content.Context;
 
 import com.digitalbuddha.daggerdemo.ui.ActivityTitleController;
-import com.digitalbuddha.daggerdemo.ui.GithubActivity;
+import com.digitalbuddha.daggerdemo.ui.RedditAsyncActivity;
+import com.digitalbuddha.daggerdemo.ui.RedditSyncActivity;
+import com.digitalbuddha.daggerdemo.ui.RedditTaskActivity;
 
 import javax.inject.Singleton;
 
@@ -32,7 +34,9 @@ import dagger.Provides;
  */
 @Module(
         injects = {
-                GithubActivity.class
+                RedditAsyncActivity.class,
+                RedditSyncActivity.class,
+                RedditTaskActivity.class
         },
         addsTo = AndroidModule.class,
         library = true
@@ -55,7 +59,8 @@ public class ActivityModule {
         return activity;
     }
 
-    @Provides @Singleton
+    @Provides
+    @Singleton
     ActivityTitleController provideTitleController() {
         return new ActivityTitleController(activity);
     }

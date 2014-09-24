@@ -18,8 +18,10 @@ package com.digitalbuddha.daggerdemo.dagger;
 import android.content.Context;
 import android.location.LocationManager;
 
+import com.android.volley.RequestQueue;
 import com.digitalbuddha.daggerdemo.DemoApplication;
 import com.digitalbuddha.daggerdemo.rest.Github;
+import com.digitalbuddha.daggerdemo.utils.CustomVolley;
 import com.path.android.jobqueue.JobManager;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -84,6 +86,17 @@ public class AndroidModule {
         return new JobManager(provideApplicationContext());
     }
 
+    @Provides
+    @Singleton
+    CustomVolley provideVolley(){
+        return CustomVolley.getInstance();
+    }
+
+    @Provides
+    @Singleton
+    RequestQueue provideRequestQueue(CustomVolley volley){
+        return volley.getRequestQueue();
+    }
 
     @Provides
     @Singleton

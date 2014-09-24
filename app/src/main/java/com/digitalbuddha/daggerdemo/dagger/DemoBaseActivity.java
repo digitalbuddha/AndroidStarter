@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.digitalbuddha.daggerdemo.DemoApplication;
+import com.digitalbuddha.daggerdemo.utils.ErrorEvent;
 import com.path.android.jobqueue.JobManager;
 
 import java.util.Arrays;
@@ -49,6 +50,11 @@ public abstract class DemoBaseActivity extends FragmentActivity {
         // Inject ourselves so subclasses will have dependencies fulfilled when this method returns.
         activityGraph.inject(this);
         EventBus.getDefault().register(this);
+
+    }
+
+    public void onEvent(ErrorEvent event)
+    {
 
     }
 

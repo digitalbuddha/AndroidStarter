@@ -1,10 +1,9 @@
 package com.digitalbuddha.daggerdemo.ui;
 
-//
-////MMM...Composition over Inheritence
-//public class GithubActivity extends DemoBaseActivity {
+//MMM...Composition over Inheritence
+//public class SimpleVolleyActivity extends DemoBaseActivity {
 //    @Inject
-//    Provider<GetReposJob> repoJob; //Provider will give new instance everytime .get() is called
+//    Provider<GetRedditJob> repoJob; //Provider will give new instance everytime .get() is called
 //
 //    @InjectView(R.id.editText)
 //    EditText userName;
