@@ -31,7 +31,7 @@ public class GetSavingTypesJob extends Job {
     }
     //
     @Override
-    protected void onCancel() {
+    protected void onCancel() { 
         throw new RuntimeException();
     }
     //don't retry on error
