@@ -1,13 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 'android-L'
+    buildToolsVersion "20.0.0"
 
     defaultConfig {
         applicationId "com.example.dagger.activitygraphs"
-        minSdkVersion 15
-        targetSdkVersion 17
+        minSdkVersion 21
+        targetSdkVersion 'L'
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
@@ -52,4 +54,10 @@ dependencies
             compile 'com.android.support:support-v13:20.+'
             compile 'de.greenrobot:eventbus:2.2.1'
             compile 'com.android.support:appcompat-v7:20.0.0'
+
+            //paddys gradle dependencies for l stuff
+            compile 'com.android.support:recyclerview-v7:+'
+            compile 'com.android.support:palette-v7:+'
+
+
         }
