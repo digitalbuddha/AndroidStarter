@@ -18,7 +18,9 @@ public abstract class AbstractVolleyJob extends Job implements  Response.ErrorLi
 
     //Job override methods
     @Override
-    public void onAdded() {}
+    public void onAdded() {
+
+    }
     @Override
     protected boolean shouldReRunOnThrowable(Throwable throwable) {
         errorMessage = throwable.getMessage();
