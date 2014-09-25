@@ -13,8 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.digitalbuddha.daggerdemo.activitygraphs.R;
 import com.digitalbuddha.daggerdemo.job.GetSavingTypesJob;
+import com.digitalbuddha.daggerdemo.job.PostSavingsRecordByUserIdJob;
 import com.digitalbuddha.daggerdemo.model.SavingRecord;
 import com.digitalbuddha.daggerdemo.model.SavingsType;
+import com.digitalbuddha.daggerdemo.rest.GetSavingsRecordsRequest;
 import com.digitalbuddha.daggerdemo.ui.actionbars.TypefaceActionBar;
 import com.digitalbuddha.daggerdemo.ui.adapters.SavingListAdapter;
 import com.digitalbuddha.daggerdemo.ui.fragments.SavingTypeFragment;
@@ -34,19 +36,17 @@ public class SavingActivity extends FragmentActivity {
     private static String SAVINGS_TYPE = "savingstype";
     private List<SavingRecord> savingsRecords = new ArrayList<SavingRecord>();
     private SavingPagerAdapter savingPagerAdapter;
-    @InjectView(R.id.signup_list)
-    RecyclerView recyclerView;
+    public RecyclerView recyclerView;
     @InjectView(R.id.savings_pager)
     ViewPager savingViewPager;
+    private JobManager jobManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saving_phone);
         ButterKnife.inject(this);
-
         EventBus.getDefault().register(this);
-
         createRecyclerView();
         createTopPager();
 
@@ -54,6 +54,7 @@ public class SavingActivity extends FragmentActivity {
     }
 
     private void createRecyclerView() {
+        recyclerView = (RecyclerView) findViewById(R.id.savings_recycler);
         savingListAdapter = new SavingListAdapter(this, savingsRecords, R.layout.savings_recycler_view);
         recyclerView.setAdapter(savingListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -64,7 +65,7 @@ public class SavingActivity extends FragmentActivity {
     public void createTopPager() {
         savingPagerAdapter = new SavingPagerAdapter(getSupportFragmentManager());
         savingViewPager.setAdapter(savingPagerAdapter);
-        JobManager jobManager = new JobManager(getApplicationContext());
+        jobManager = new JobManager(getApplicationContext());
         jobManager.addJobInBackground(new GetSavingTypesJob());
     }
 
@@ -97,10 +98,16 @@ public class SavingActivity extends FragmentActivity {
         }
     }
 
-    public void onEventMainThread(GetSavingTypesJob savingsTypeJob)
+    public void onEventMainThread(GetSavingTypesJob getSavingsTypeJob)
     {
-        List<SavingsType> savings = savingsTypeJob.savingsTypes;
+        List<SavingsType> savings = getSavingsTypeJob.savingsTypes;
         savingPagerAdapter.dataChanged(savings);
+    }
+
+    public void onEventMainThread(GetSavingsRecordsRequest getSavingsRecordsJob)
+    {
+        List<SavingRecord> savingsRecords = getSavingsRecordsJob.savingsTypes;
+        savingListAdapter.dataSetChanged(savingsRecords);
     }
 
     @Override
@@ -117,8 +124,8 @@ public class SavingActivity extends FragmentActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-
-            //TODO: save records here
+            List<SavingRecord> savingsRecordList = savingListAdapter.getSavingsList();
+            jobManager.addJobInBackground(new PostSavingsRecordByUserIdJob(1,1));
 
             return true;
         }

@@ -52,18 +52,22 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
     public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         final SavingRecord item = savings.get(i);
 
+        resetInitialView(viewHolder);
+
         viewHolder.text.setText(item.getSavingsType().getTitle());
         viewHolder.image.setImageUrl(item.getSavingsType().getIconUrl(), MyVolley.getImageLoader());
+        viewHolder.backIcon.setImageUrl(item.getSavingsType().getBack(), MyVolley.getImageLoader());
+        viewHolder.acceptIcon.setImageUrl(item.getSavingsType().getAccept(), MyVolley.getImageLoader());
 
-        if (i == 0) {
-            viewHolder.nextIcon.setImageUrl(item.getSavingsType().getNext(), MyVolley.getImageLoader());
-            TranslateAnimation anim = bounceFromAbove();
-            viewHolder.nextIcon.startAnimation(anim);
-        } else {
-            viewHolder.nextIcon.setImageUrl(item.getSavingsType().getNext(), MyVolley.getImageLoader());;
-        }
-        nextOnClick(viewHolder);
+        createNextIconView(viewHolder, i, item);
+        createDeleteIconView(viewHolder, i, item);
+        createColorBackground(viewHolder, item);
+        createNumberPickers(viewHolder, item);
+        backOnClick(viewHolder);
+    }
 
+    private void createDeleteIconView(final ViewHolder viewHolder, int i, final SavingRecord item)
+    {
         if (i == 0) {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -76,28 +80,41 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         } else {
             viewHolder.deleteIcon.setImageUrl(item.getSavingsType().getDelete(), MyVolley.getImageLoader());
         }
-
         viewHolder.deleteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 remove(item);
             }
         });
+    }
 
-        createColorBackground(viewHolder, item);
-        setNumberPickers(viewHolder, item);
-        backOnClick(viewHolder);
+    private void createNextIconView(ViewHolder viewHolder, int i, SavingRecord item)
+    {
+        if (i == 0) {
+            viewHolder.nextIcon.setImageUrl(item.getSavingsType().getNext(), MyVolley.getImageLoader());
+            TranslateAnimation anim = bounceFromAbove();
+            viewHolder.nextIcon.startAnimation(anim);
+        } else {
+            viewHolder.nextIcon.setImageUrl(item.getSavingsType().getNext(), MyVolley.getImageLoader());;
+        }
+        nextOnClick(viewHolder);
+    }
 
+    private void resetInitialView(ViewHolder viewHolder)
+    {
+        //Remove views that the recyclerview may hold onto
+        viewHolder.savingsView.setVisibility(View.GONE);
+        viewHolder.nextIcon.setImageDrawable(null);
+        viewHolder.deleteIcon.setImageDrawable(null);
+        viewHolder.backIcon.setImageDrawable(null);
+        viewHolder.acceptIcon.setImageDrawable(null);
     }
 
     private void createColorBackground(ViewHolder viewHolder, SavingRecord item) {
-        String colorIdString = item.getSavingsType().getId();
-        int colorInt = context.getResources().getIdentifier(colorIdString, "color", context.getPackageName());
-        String colorString = context.getResources().getString(colorInt);
+        //Set background to 50% opacity
+        String colorString = item.getSavingsType().getColor();
         String[] colorStringArray = colorString.split("");
         StringBuilder fiftyOpacity = new StringBuilder();
-
-        //Change hex color string to 50% opacity
         for (int j = 0; j < colorStringArray.length; j++)
         {
             if (j == 2) { colorStringArray[j] = "B"; }
@@ -159,16 +176,37 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         });
     }
 
-    private void setNumberPickers(ViewHolder viewHolder, SavingRecord item)
+    private void createNumberPickers(ViewHolder viewHolder, final SavingRecord item)
     {
-        viewHolder.frequency.setMaxValue(25);
-        viewHolder.frequency.setMinValue(0);
+        createMultiplierPicker(viewHolder, item);
+        createAmountPicker(viewHolder, item);
+        createFrequencyString(viewHolder, item);
+    }
 
+    private void createFrequencyString(ViewHolder viewHolder, final SavingRecord item)
+    {
+        final String[] frequencyValuesArray = new String[] { "Daily", "Weekly", "Monthly", "Yearly" };
+        viewHolder.frequencyString.setMaxValue(frequencyValuesArray.length-1);
+        viewHolder.frequencyString.setMinValue(0);
+        viewHolder.frequencyString.setDisplayedValues(frequencyValuesArray);
+        viewHolder.frequencyString.setOnValueChangedListener(new NumberPicker.OnValueChangeListener()
+        {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i2)
+            {
+                String frequency = frequencyValuesArray[numberPicker.getValue()];
+                item.setFrequency(frequency);
+            }
+        });
+    }
+
+    private void createAmountPicker(ViewHolder viewHolder, final SavingRecord item)
+    {
         Locale locale = context.getResources().getConfiguration().locale;
         Currency localCurrency = Currency.getInstance(locale);
         String currencySymbol = localCurrency.getSymbol(locale);
 
-        String[] savingsAmounts = new String[300];
+        final String[] savingsAmounts = new String[300];
         for (int i = 0; i < 300; i++) {
             double amount = i * 0.50;
             savingsAmounts[i] = currencySymbol + Double.toString(amount)+"0";
@@ -176,16 +214,29 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         viewHolder.amountSaved.setMaxValue(savingsAmounts.length-1);
         viewHolder.amountSaved.setMinValue(0);
         viewHolder.amountSaved.setDisplayedValues(savingsAmounts);
+        viewHolder.amountSaved.setOnValueChangedListener(new NumberPicker.OnValueChangeListener()
+        {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i2)
+            {
+                String savingsAmount = savingsAmounts[numberPicker.getValue()];
+                item.setAmount(savingsAmount);
+            }
+        });
+    }
 
-        String[] frequencyValuesArray = new String[] {
-                "Daily",
-                "Weekly",
-                "Monthly",
-                "Yearly"
-        };
-        viewHolder.frequencyString.setMaxValue(frequencyValuesArray.length-1);
-        viewHolder.frequencyString.setMinValue(0);
-        viewHolder.frequencyString.setDisplayedValues(frequencyValuesArray);
+    private void createMultiplierPicker(ViewHolder viewHolder, final SavingRecord item)
+    {
+        viewHolder.frequency.setMaxValue(25);
+        viewHolder.frequency.setMinValue(0);
+        viewHolder.frequency.setOnValueChangedListener(new NumberPicker.OnValueChangeListener()
+        {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i2)
+            {
+                item.setMultiplier(numberPicker.getValue());
+            }
+        });
     }
 
     private TranslateAnimation bounceFromAbove() {

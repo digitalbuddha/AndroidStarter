@@ -1044,6 +1044,7 @@ containing a value of this type.
         public static final int saving_icon=0x7f050047;
         public static final int saving_title=0x7f050046;
         public static final int savings_pager=0x7f050044;
+        public static final int savings_recycler=0x7f050045;
         public static final int search_badge=0x7f050036;
         public static final int search_bar=0x7f050035;
         public static final int search_button=0x7f050037;
@@ -1058,7 +1059,6 @@ containing a value of this type.
         public static final int showCustom=0x7f05000b;
         public static final int showHome=0x7f050008;
         public static final int showTitle=0x7f05000a;
-        public static final int signup_list=0x7f050045;
         public static final int slider_second_page=0x7f05004b;
         public static final int slider_second_page_backdrop=0x7f05004c;
         public static final int split_action_bar=0x7f050022;
