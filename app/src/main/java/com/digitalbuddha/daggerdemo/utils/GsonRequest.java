@@ -49,7 +49,6 @@ public class GsonRequest<T> extends Request<T> {
      * Make a GET request and return a parsed object from JSON.
      *
      * @param url   URL of the request to make
-     * @param clazz Relevant class object, for Gson's reflection
      */
     public GsonRequest(int method,
                        String url,
@@ -71,7 +70,6 @@ public class GsonRequest<T> extends Request<T> {
      */
     public GsonRequest(int method,
                        String url,
-                       Class<T> clazz,
                        Type type,
                        Map<String, String> params,
                        Response.Listener<T> listener,

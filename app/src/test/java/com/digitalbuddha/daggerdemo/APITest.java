@@ -13,7 +13,7 @@ import java.util.List;
 //Roboelectric Test
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(emulateSdk = 18)
-public class RequestsTest extends BaseTestCase
+public class APITest extends BaseTestCase
 {
     //TypesTest
     @Test

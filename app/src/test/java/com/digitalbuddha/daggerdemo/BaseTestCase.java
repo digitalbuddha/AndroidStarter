@@ -81,6 +81,7 @@ public class BaseTestCase extends AndroidTestCase
             }
             this.client = client;
         }
+
         @Override
         protected HttpURLConnection createConnection(URL url) throws IOException
         {
