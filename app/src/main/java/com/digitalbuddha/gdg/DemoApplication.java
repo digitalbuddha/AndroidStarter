@@ -17,13 +17,10 @@ package com.digitalbuddha.gdg;
 
 import android.app.Application;
 
-import com.digitalbuddha.gdg.utils.MyVolley;
-
 
 public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        MyVolley.init(getApplicationContext());
     }
 }
