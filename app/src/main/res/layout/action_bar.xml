@@ -14,4 +14,4 @@
     android:maxLines="1"
     android:elevation="5dp"
     android:gravity="center"
-    android:background="@color/theme_blue"/>
+    />

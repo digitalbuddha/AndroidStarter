@@ -25,7 +25,8 @@ public abstract class AbstractVolleyJob extends Job implements Response.Listener
 
     //volley callbacks
     @Override
-    public void onResponse(Object o) {EventBus.getDefault().post(this);}
+    public void onResponse(Object o) {
+        EventBus.getDefault().post(this);}
     @Override
     public void onErrorResponse(VolleyError volleyError) {EventBus.getDefault().post(new ErrorEvent());}
 }

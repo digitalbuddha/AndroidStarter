@@ -17,13 +17,7 @@ package com.digitalbuddha.daggerdemo;
 
 import android.app.Application;
 
-import java.util.Arrays;
-import java.util.List;
-
-import dagger.ObjectGraph;
-
 public class DemoApplication extends Application {
-    private ObjectGraph applicationGraph;
 
     @Override
     public void onCreate() {
