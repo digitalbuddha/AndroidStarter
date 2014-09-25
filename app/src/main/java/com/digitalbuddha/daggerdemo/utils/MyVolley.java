@@ -23,6 +23,10 @@ import com.android.volley.toolbox.Volley;
 
 public class MyVolley
 {
+    public static void setRequestQueue(RequestQueue mRequestQueue) {
+        MyVolley.mRequestQueue = mRequestQueue;
+    }
+
     private static RequestQueue mRequestQueue;
     private static ImageLoader mImageLoader;
 

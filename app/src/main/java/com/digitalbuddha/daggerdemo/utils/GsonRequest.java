@@ -1,23 +1,5 @@
 package com.digitalbuddha.daggerdemo.utils;
 
-/**
- * Created by MikeN on 9/14/14.
- */
-/**
- * Copyright 2013 Ognyan Bankov
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 
 import android.util.Log;
@@ -34,7 +16,6 @@ import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
-
 
 /**
  * Volley adapter for JSON requests with POST method that will be parsed into Java objects by Gson.
@@ -130,7 +111,6 @@ public class GsonRequest<T> extends Request<T> {
         }
     }
 
-
     public Cache.Entry customCachePolicy(NetworkResponse response, int softTTLDefault, int hardTTLDefault) {
         long now = System.currentTimeMillis();
         Map<String, String> headers = response.headers;
@@ -155,7 +135,6 @@ public class GsonRequest<T> extends Request<T> {
         entry.responseHeaders = headers;
         return entry;
     }
-
     @Override
     public void addMarker(String tag) {
         super.addMarker(tag);
