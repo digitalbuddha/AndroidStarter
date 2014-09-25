@@ -2,17 +2,11 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/javax.inject-1-2730ac67fa5ed01b3a3e32c5f175670b60100a80.jar"
-        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-5b4a688c2edb4d71408f006cbcaf6ab369106f79.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0-rc1/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38"/>
-    <item
-        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/retrofit-1.6.1-e702378d1f646bfb61e80006e55f4f551a17c001.jar"
-        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.6.1/efb0a36546aa8857ab8df358b106c1817e03cbee/retrofit-1.6.1.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="efb0a36546aa8857ab8df358b106c1817e03cbee"/>
+        sha1="1e9669056e62fa7f81101be3a61e3c6c4fc6e7d7"/>
     <item
         dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/gson-2.3-ea3a8c949ebac8f4d2fba4a42cad362a7f4dfd1c.jar"
         jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
@@ -32,12 +26,6 @@
         revision="20.0.0"
         sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
     <item
-        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/dagger-1.2.1-999736e01a9db9aad10d599f616b8308d48cc64e.jar"
-        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.squareup.dagger/dagger/1.2.1/78f96ef00fceee95802930944b1fc4e0e1f9aacc/dagger-1.2.1.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="78f96ef00fceee95802930944b1fc4e0e1f9aacc"/>
-    <item
         dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/jackson-core-asl-1.9.13-ec50de036af77bded8af54babb23e3aba624819b.jar"
         jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.13/3c304d70f42f832e0a86d45bd437f692129299a4/jackson-core-asl-1.9.13.jar"
         jumboMode="false"
@@ -55,18 +43,6 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7"/>
-    <item
-        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/magicthreads-0.2-release-48747f9c7143372d12e1c58e252814e50809a2a2.jar"
-        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/co.touchlab/magicthreads/0.2/aebb99202a54114313a63c17ca8c36bfc545c948/magicthreads-0.2-release.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="aebb99202a54114313a63c17ca8c36bfc545c948"/>
-    <item
-        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-5b4a688c2edb4d71408f006cbcaf6ab369106f79.jar"
-        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0-rc1/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="1e9669056e62fa7f81101be3a61e3c6c4fc6e7d7"/>
     <item
         dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/butterknife-5.1.1-53d5bf9167fab96404d0ff6013183cfb1a3b70d6.jar"
         jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/5.1.1/b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8/butterknife-5.1.1.jar"

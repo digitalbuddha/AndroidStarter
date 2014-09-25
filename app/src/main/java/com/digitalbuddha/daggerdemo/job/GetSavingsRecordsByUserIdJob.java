@@ -30,6 +30,5 @@ public class GetSavingsRecordsByUserIdJob extends AbstractVolleyJob implements R
 
     @Override
     public void onResponse(List<SavingRecord> response) {
-
     }
 }

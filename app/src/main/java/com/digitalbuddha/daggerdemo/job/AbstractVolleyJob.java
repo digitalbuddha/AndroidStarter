@@ -27,10 +27,8 @@ public abstract class AbstractVolleyJob extends Job implements  Response.ErrorLi
     }
     @Override
     protected void onCancel() {
-        ErrorEvent errorEvent = new ErrorEvent();
-        errorEvent.message=errorMessage;
-        EventBus.getDefault().post(errorEvent);
+        EventBus.getDefault().post( new ErrorEvent(errorMessage));
     }
     @Override
-    public void onErrorResponse(VolleyError volleyError) {EventBus.getDefault().post(new ErrorEvent());}
+    public void onErrorResponse(VolleyError volleyError) {EventBus.getDefault().post(new ErrorEvent(volleyError.getMessage()));}
 }
