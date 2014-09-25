@@ -25,6 +25,5 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         MyVolley.init(getApplicationContext());
-
     }
 }

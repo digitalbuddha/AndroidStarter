@@ -26,7 +26,7 @@ public class APITest extends BaseTestCase
         List<SavingsType> savingsTypes1 = future.get();
     }
 
-    //TypesTest
+    //RecordTest
     @Test
     public void tesGetRecordsRequest() throws Exception {
         RequestFuture<List<SavingRecord>> future=RequestFuture.newFuture();

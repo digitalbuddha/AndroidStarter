@@ -3,6 +3,7 @@ package com.digitalbuddha.gdg.rest;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.digitalbuddha.gdg.model.SavingRecord;
 import com.digitalbuddha.gdg.model.SavingsType;
 import com.digitalbuddha.gdg.utils.GsonRequest;
 import com.digitalbuddha.gdg.utils.MyVolley;
@@ -20,22 +21,21 @@ public class PostSavingsRecordsRequest {
     private final Response.Listener success;
     private final Response.ErrorListener error;
     private int userId;
-    private int typeId;
+    private SavingRecord record;
+    private String url = "BaseURL/savingsrecord"+userId;
 
-    public PostSavingsRecordsRequest(Response.Listener success, Response.ErrorListener error, int userId, int typeId) {
+    public PostSavingsRecordsRequest(Response.Listener success, Response.ErrorListener error, int userId, SavingRecord record) {
         this.success = success;
         this.error = error;
         this.userId = userId;
-        this.typeId = typeId;
+        this.record = record;
     }
 
    //PostRecordsRequestInvoke
     public void invoke() {
         Map params = new HashMap<String, Object>();
-        params.put("typeId", typeId);
-        String url = "BaseURL/savingsrecord"+userId;
+        params.put("record", record);
         //invalidate cache for getSavingsRecordRequest;
-        MyVolley.getRequestQueue().getCache().remove(GetSavingsRecordsRequest.RECORDS_URL);
         GsonRequest request = new GsonRequest<List<SavingsType>>(Request.Method.POST, url, new TypeToken<List<SavingsType>>(){}.getType(), params, success, error);
         request.setRetryPolicy(new DefaultRetryPolicy(30000, 3, 1));
         request.setShouldCache(false);
