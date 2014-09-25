@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
 import java.util.Map;
 
 /**
@@ -23,9 +24,9 @@ import java.util.Map;
 //GSON Request
 public class GsonRequest<T> extends Request<T> {
     private Gson mGson = new Gson();
-    protected Class<T> clazz;
     private Map<String, String> headers;
     private Map<String, String> params;
+    private final Type type;
     private Response.Listener<T> listener;
 
     public int getSoftTTLDefault() {
@@ -48,15 +49,14 @@ public class GsonRequest<T> extends Request<T> {
      * Make a GET request and return a parsed object from JSON.
      *
      * @param url   URL of the request to make
-     * @param clazz Relevant class object, for Gson's reflection
      */
     public GsonRequest(int method,
                        String url,
-                       Class<T> clazz,
+                       Type type,
                        Response.Listener<T> listener,
                        Response.ErrorListener errorListener) {
         super(method, url, errorListener);
-        this.clazz = clazz;
+        this.type = type;
         this.listener = listener;
         mGson = new Gson();
 
@@ -70,13 +70,13 @@ public class GsonRequest<T> extends Request<T> {
      */
     public GsonRequest(int method,
                        String url,
-                       Class<T> clazz,
+                       Type type,
                        Map<String, String> params,
                        Response.Listener<T> listener,
                        Response.ErrorListener errorListener) {
 
         super(method, url, errorListener);
-        this.clazz = clazz;
+        this.type = type;
         this.params = params;
         this.listener = listener;
         this.headers = null;
@@ -103,8 +103,8 @@ public class GsonRequest<T> extends Request<T> {
         try {
             String json = new String(
                     response.data, HttpHeaderParser.parseCharset(response.headers));
-            return Response.success(
-                    mGson.fromJson(json, clazz), customCachePolicy(response,softTTLDefault,hardTTLDefault));
+            return (Response<T>) Response.success(
+                    mGson.fromJson(json, type), customCachePolicy(response,softTTLDefault,hardTTLDefault));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new ParseError(e));
         } catch (JsonSyntaxException e) {
