@@ -56,7 +56,6 @@ dependencies
             compile 'com.android.support:palette-v7:+'
             compile 'com.android.support:appcompat-v7:20.+'
 
-            androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3'
             testCompile 'junit:junit:4.10'
             testCompile 'org.robolectric:robolectric:2.+'
 

@@ -69,12 +69,10 @@ public class BaseTestCase extends AndroidTestCase
     public static class OkHttpStack extends HurlStack
     {
         private final OkHttpClient client;
-
         public OkHttpStack()
         {
             this(new OkHttpClient());
         }
-
         public OkHttpStack(OkHttpClient client)
         {
             if (client == null)
@@ -83,7 +81,6 @@ public class BaseTestCase extends AndroidTestCase
             }
             this.client = client;
         }
-
         @Override
         protected HttpURLConnection createConnection(URL url) throws IOException
         {
