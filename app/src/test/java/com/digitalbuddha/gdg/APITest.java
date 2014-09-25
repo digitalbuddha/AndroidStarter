@@ -1,10 +1,6 @@
 package com.digitalbuddha.gdg;
 
 import com.android.volley.toolbox.RequestFuture;
-import com.digitalbuddha.gdg.model.SavingRecord;
-import com.digitalbuddha.gdg.model.SavingsType;
-import com.digitalbuddha.gdg.rest.GetSavingsRecordsRequest;
-import com.digitalbuddha.gdg.rest.GetSavingsTypesRequest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

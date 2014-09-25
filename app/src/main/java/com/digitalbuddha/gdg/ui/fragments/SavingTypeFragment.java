@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.digitalbuddha.gdg.activitygraphs.R;
-import com.digitalbuddha.gdg.model.SavingRecord;
-import com.digitalbuddha.gdg.model.SavingsType;
 import com.digitalbuddha.gdg.ui.activities.SavingActivity;
 import com.digitalbuddha.gdg.utils.MyVolley;
 import com.google.gson.Gson;
