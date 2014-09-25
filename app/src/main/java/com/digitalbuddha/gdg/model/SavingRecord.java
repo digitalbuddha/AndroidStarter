@@ -6,11 +6,28 @@ package com.digitalbuddha.gdg.model;
 //SavingsRecord Model
 public class SavingRecord {
 
+    private String amount;
+    private String frequency;
     private String id;
     private SavingsType savingsType;
-    private String amount;
-    private int multiplier;
-    private String frequency;
+    private Integer multiplier;
+
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
 
     public String getId() {
         return id;
@@ -28,27 +45,11 @@ public class SavingRecord {
         this.savingsType = savingsType;
     }
 
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public int getMultiplier() {
+    public Integer getMultiplier() {
         return multiplier;
     }
 
-    public void setMultiplier(int multiplier) {
+    public void setMultiplier(Integer multiplier) {
         this.multiplier = multiplier;
-    }
-
-    public String getFrequency() {
-        return frequency;
-    }
-
-    public void setFrequency(String frequency) {
-        this.frequency = frequency;
     }
 }
