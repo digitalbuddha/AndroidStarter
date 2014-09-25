@@ -146,7 +146,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
             public void onClick(final View view) {
 
                 TranslateAnimation anim = new TranslateAnimation(0, 1200, 0, 0);
-                anim.setDuration(500);
+                anim.setDuration(1000);
                 anim.setInterpolator(new LinearInterpolator());
                 anim.setRepeatCount(0);
                 anim.setFillAfter(false);
@@ -256,7 +256,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
 
     private TranslateAnimation bounceFromAbove() {
         TranslateAnimation bounceAnim = new TranslateAnimation(0, 0, -1000, 0);
-        bounceAnim.setDuration(500);
+        bounceAnim.setDuration(1000);
         bounceAnim.setInterpolator(new BounceInterpolator());
         bounceAnim.setRepeatCount(0);
         bounceAnim.setFillAfter(false);
@@ -269,12 +269,12 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
 
         TranslateAnimation movingLeft = new TranslateAnimation(940, 0, 0, 0);
         movingLeft.setFillAfter(true);
-        movingLeft.setDuration(1000);
+        movingLeft.setDuration(2000);
         movingLeft.setRepeatCount(0);
 
         RotateAnimation rolling = new RotateAnimation(359, 0, Animation.RELATIVE_TO_SELF, 0.5255f,
                 Animation.RELATIVE_TO_SELF, 0.5255f);
-        rolling.setDuration(200);
+        rolling.setDuration(400);
         rolling.setInterpolator(new LinearInterpolator());
         rolling.setFillAfter(false);
         rolling.setRepeatCount(3);
