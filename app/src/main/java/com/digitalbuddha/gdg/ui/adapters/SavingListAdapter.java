@@ -19,8 +19,10 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.digitalbuddha.gdg.activitygraphs.R;
+import com.digitalbuddha.gdg.job.PostSavingsRecordByUserIdJob;
 import com.digitalbuddha.gdg.model.SavingRecord;
 import com.digitalbuddha.gdg.utils.MyVolley;
+import com.path.android.jobqueue.JobManager;
 
 import java.util.ArrayList;
 import java.util.Currency;
@@ -34,6 +36,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
     public List<SavingRecord> savings = new ArrayList<SavingRecord>();
     private Context context;
     private int itemLayout;
+    private JobManager jobManager;
 
     public SavingListAdapter(Context context, List<SavingRecord> savings, int itemLayout) {
         super();
@@ -78,6 +81,9 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
                 viewHolder.frequency.setEnabled(false);
                 viewHolder.frequencyString.setEnabled(false);
                 viewHolder.amountSaved.setEnabled(false);
+                //Create new job to post SavingsRecord to server
+                jobManager = new JobManager(context);
+                jobManager.addJobInBackground(new PostSavingsRecordByUserIdJob(1, item));
             }
         });
     }

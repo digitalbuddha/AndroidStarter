@@ -11,9 +11,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.digitalbuddha.gdg.activitygraphs.R;
 import com.digitalbuddha.gdg.job.GetSavingTypesJob;
-import com.digitalbuddha.gdg.job.PostSavingsRecordByUserIdJob;
 import com.digitalbuddha.gdg.model.SavingRecord;
 import com.digitalbuddha.gdg.model.SavingsType;
 import com.digitalbuddha.gdg.rest.GetSavingsRecordsRequest;
@@ -22,6 +22,7 @@ import com.digitalbuddha.gdg.ui.adapters.SavingListAdapter;
 import com.digitalbuddha.gdg.ui.fragments.SavingTypeFragment;
 import com.google.gson.Gson;
 import com.path.android.jobqueue.JobManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -124,8 +125,8 @@ public class SavingActivity extends FragmentActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            List<SavingRecord> savingsRecordList = savingListAdapter.getSavingsList();
-            jobManager.addJobInBackground(new PostSavingsRecordByUserIdJob(1,1));
+//            List<SavingRecord> savingsRecordList = savingListAdapter.getSavingsList();
+//            jobManager.addJobInBackground(new PostSavingsRecordByUserIdJob(1,1));
 
             return true;
         }
