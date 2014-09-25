@@ -3,6 +3,7 @@ package com.digitalbuddha.daggerdemo.job;
 import com.android.volley.Response;
 import com.digitalbuddha.daggerdemo.model.SavingRecord;
 import com.digitalbuddha.daggerdemo.rest.PostSavingsRecordsRequest;
+import com.digitalbuddha.daggerdemo.utils.AbstractVolleyJob;
 import com.path.android.jobqueue.Params;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class PostSavingsRecordByUserIdJob extends AbstractVolleyJob implements R
         PostSavingsRecordsRequest savingsRecordsRequest = new PostSavingsRecordsRequest(this, this,userId,typeId);
         savingsRecordsRequest.invoke();
     }
-
+    //PostRecordsResponse
     @Override
     public void onResponse(List<SavingRecord> response) {
 

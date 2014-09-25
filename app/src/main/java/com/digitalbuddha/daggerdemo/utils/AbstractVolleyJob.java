@@ -1,8 +1,7 @@
-package com.digitalbuddha.daggerdemo.job;
+package com.digitalbuddha.daggerdemo.utils;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.digitalbuddha.daggerdemo.utils.ErrorEvent;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
 

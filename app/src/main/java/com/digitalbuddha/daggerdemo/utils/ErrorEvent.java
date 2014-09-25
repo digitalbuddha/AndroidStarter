@@ -8,7 +8,6 @@ public class ErrorEvent {
     public String message;
 
     public ErrorEvent(String message) {
-
         this.message = message;
     }
 }

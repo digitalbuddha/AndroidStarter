@@ -3,7 +3,6 @@ package com.digitalbuddha.daggerdemo.rest;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.toolbox.RequestFuture;
 import com.digitalbuddha.daggerdemo.model.SavingsType;
 import com.digitalbuddha.daggerdemo.utils.GsonRequest;
 import com.digitalbuddha.daggerdemo.utils.MyVolley;
@@ -18,7 +17,6 @@ import java.util.Map;
  */
 //PostRecord
 public class PostSavingsRecordsRequest {
-    private RequestFuture future;
     private final Response.Listener success;
     private final Response.ErrorListener error;
     private int userId;
@@ -32,7 +30,6 @@ public class PostSavingsRecordsRequest {
     }
 
    //PostRecordsRequestInvoke
-
     public void invoke() {
         Map params = new HashMap<String, String>();
         params.put("typeId", String.valueOf(typeId));
@@ -42,6 +39,6 @@ public class PostSavingsRecordsRequest {
         MyVolley.getRequestQueue().add(request);
         request.setShouldCache(false);
         //TODO: invalidate cache for getSavingsRecordRequest;
-        MyVolley.getRequestQueue().getCache().remove("url" + userId);
+        MyVolley.getRequestQueue().getCache().remove("getURL" + userId);
     }
 }
