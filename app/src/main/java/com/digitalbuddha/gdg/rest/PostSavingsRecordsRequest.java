@@ -34,12 +34,11 @@ public class PostSavingsRecordsRequest {
         Map params = new HashMap<String, Object>();
         params.put("typeId", typeId);
         String url = "BaseURL/savingsrecord"+userId;
-        //Clear local Cache
-        MyVolley.getRequestQueue().getCache().remove("getURL" + userId);
+        //invalidate cache for getSavingsRecordRequest;
+        MyVolley.getRequestQueue().getCache().remove(GetSavingsRecordsRequest.RECORDS_URL);
         GsonRequest request = new GsonRequest<List<SavingsType>>(Request.Method.POST, url, new TypeToken<List<SavingsType>>(){}.getType(), params, success, error);
         request.setRetryPolicy(new DefaultRetryPolicy(30000, 3, 1));
         request.setShouldCache(false);
-        //TODO: invalidate cache for getSavingsRecordRequest;
         MyVolley.getRequestQueue().add(request);
     }
 }
