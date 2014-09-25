@@ -64,6 +64,22 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         createColorBackground(viewHolder, item);
         createNumberPickers(viewHolder, item);
         backOnClick(viewHolder);
+        createAcceptIconChange(viewHolder, item);
+    }
+
+    private void createAcceptIconChange(final ViewHolder viewHolder, final SavingRecord item)
+    {
+        viewHolder.acceptIcon.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                viewHolder.acceptIcon.setImageUrl(item.getSavingsType().getEdit(), MyVolley.getImageLoader());
+                viewHolder.frequency.setEnabled(false);
+                viewHolder.frequencyString.setEnabled(false);
+                viewHolder.amountSaved.setEnabled(false);
+            }
+        });
     }
 
     private void createDeleteIconView(final ViewHolder viewHolder, int i, final SavingRecord item)
@@ -102,8 +118,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
 
     private void resetInitialView(ViewHolder viewHolder)
     {
-        //Remove views that the recyclerview may hold onto
-        viewHolder.savingsView.setVisibility(View.GONE);
+        //Remove views that the recyclerView may hold onto
         viewHolder.nextIcon.setImageDrawable(null);
         viewHolder.deleteIcon.setImageDrawable(null);
         viewHolder.backIcon.setImageDrawable(null);
