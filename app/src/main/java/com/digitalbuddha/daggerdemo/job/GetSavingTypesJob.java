@@ -6,6 +6,8 @@ import com.path.android.jobqueue.Params;
 
 import java.util.List;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by MikeN on 9/8/14.
  */
@@ -29,4 +31,9 @@ public class GetSavingTypesJob extends AbstractVolleyJob {
         savingsTypesRequest.invoke();
         savingsTypes = savingsTypesRequest.savingsTypes;
     }
+    //volley callbacks
+    @Override
+    public void onResponse(Object response) {
+        savingsTypes= (List<SavingsType>)response;
+        EventBus.getDefault().post(this);}
 }
