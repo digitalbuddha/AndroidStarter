@@ -2,6 +2,7 @@ package com.digitalbuddha.daggerdemo.job;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.digitalbuddha.daggerdemo.model.SavingsType;
 import com.digitalbuddha.daggerdemo.rest.SavingsTypesRequest;
 import com.digitalbuddha.daggerdemo.utils.ErrorEvent;
 import com.path.android.jobqueue.Job;
@@ -16,6 +17,8 @@ import de.greenrobot.event.EventBus;
  */
 public class GetSavingTypesJob extends Job implements Response.Listener, Response.ErrorListener {
     //TODO add retry count;
+    public List<SavingsType> savingsTypes;
+
     public GetSavingTypesJob() {
 //        super(new Params(2)
 //                .requireNetwork()
@@ -32,7 +35,7 @@ public class GetSavingTypesJob extends Job implements Response.Listener, Respons
         String url = "Google.com";
         SavingsTypesRequest savingsTypesRequest = new SavingsTypesRequest(this, this, url);
         savingsTypesRequest.invoke();
-        List savingsTypes = savingsTypesRequest.savingsTypes;
+        savingsTypes = savingsTypesRequest.savingsTypes;
     }
 
     //
