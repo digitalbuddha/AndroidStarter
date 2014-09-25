@@ -19,7 +19,7 @@ public class APITest extends BaseTestCase
     @Test
     public void tesGetSavingTypesJob() throws Exception {
         RequestFuture<List<SavingsType>> future=RequestFuture.newFuture();
-        SavingsTypesRequest savingsTypesRequest= new SavingsTypesRequest(future,future,"google.com");
+        SavingsTypesRequest savingsTypesRequest= new SavingsTypesRequest(future,future);
         savingsTypesRequest.invoke();
         List<SavingsType> savingsTypes1 = future.get();
     }

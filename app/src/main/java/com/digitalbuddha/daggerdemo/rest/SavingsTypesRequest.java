@@ -22,7 +22,7 @@ public class SavingsTypesRequest {
     private String url="https://raw.githubusercontent.com/digitalbuddha/AndroidStarter/master/types.json";
     public List savingsTypes;
 
-    public SavingsTypesRequest(Response.Listener success, Response.ErrorListener error, String url) {
+    public SavingsTypesRequest(Response.Listener success, Response.ErrorListener error) {
         this.success = success;
         this.error = error;
     }

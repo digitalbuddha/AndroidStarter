@@ -1,5 +1,6 @@
 package com.digitalbuddha.daggerdemo.job;
 
+import com.android.volley.Response;
 import com.digitalbuddha.daggerdemo.model.SavingsType;
 import com.digitalbuddha.daggerdemo.rest.SavingsTypesRequest;
 import com.path.android.jobqueue.Params;
@@ -12,7 +13,7 @@ import de.greenrobot.event.EventBus;
  * Created by MikeN on 9/8/14.
  */
 //GetTypesJob
-public class GetSavingTypesJob extends AbstractVolleyJob {
+public class GetSavingTypesJob extends AbstractVolleyJob implements Response.Listener<List<SavingsType>>{
     //TODO add retry count;
     public List<SavingsType> savingsTypes;
 
@@ -23,17 +24,17 @@ public class GetSavingTypesJob extends AbstractVolleyJob {
 //                .groupBy("Repos"));
         super(new Params(0));
     }
+
     //GetTypesRun
     @Override
     public void onRun() throws Throwable {
-        String url = "Google.com";
-        SavingsTypesRequest savingsTypesRequest = new SavingsTypesRequest(this, this, url);
+        SavingsTypesRequest savingsTypesRequest = new SavingsTypesRequest(this, this);
         savingsTypesRequest.invoke();
-        savingsTypes = savingsTypesRequest.savingsTypes;
     }
     //volley callbacks
     @Override
-    public void onResponse(Object response) {
-        savingsTypes= (List<SavingsType>)response;
-        EventBus.getDefault().post(this);}
+    public void onResponse(List<SavingsType> typeResponse) {
+        savingsTypes= typeResponse;
+        EventBus.getDefault().post(this);
+    }
 }
