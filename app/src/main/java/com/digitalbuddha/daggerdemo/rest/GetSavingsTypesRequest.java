@@ -3,7 +3,6 @@ package com.digitalbuddha.daggerdemo.rest;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.toolbox.RequestFuture;
 import com.digitalbuddha.daggerdemo.model.SavingsType;
 import com.digitalbuddha.daggerdemo.utils.GsonRequest;
 import com.digitalbuddha.daggerdemo.utils.MyVolley;
@@ -15,14 +14,13 @@ import java.util.List;
  * Created by MikeN on 9/24/14.
  */
 //TypeRequest
-public class SavingsTypesRequest {
-    private RequestFuture future;
+public class GetSavingsTypesRequest {
     private final Response.Listener success;
     private final Response.ErrorListener error;
     private String url="https://raw.githubusercontent.com/digitalbuddha/AndroidStarter/master/types.json";
     public List savingsTypes;
 
-    public SavingsTypesRequest(Response.Listener success, Response.ErrorListener error) {
+    public GetSavingsTypesRequest(Response.Listener success, Response.ErrorListener error) {
         this.success = success;
         this.error = error;
     }

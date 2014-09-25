@@ -1,8 +1,7 @@
-package com.digitalbuddha.daggerdemo.job;
+package com.digitalbuddha.daggerdemo.utils;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.digitalbuddha.daggerdemo.utils.ErrorEvent;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
 
@@ -27,10 +26,8 @@ public abstract class AbstractVolleyJob extends Job implements  Response.ErrorLi
     }
     @Override
     protected void onCancel() {
-        ErrorEvent errorEvent = new ErrorEvent();
-        errorEvent.message=errorMessage;
-        EventBus.getDefault().post(errorEvent);
+        EventBus.getDefault().post( new ErrorEvent(errorMessage));
     }
     @Override
-    public void onErrorResponse(VolleyError volleyError) {EventBus.getDefault().post(new ErrorEvent());}
+    public void onErrorResponse(VolleyError volleyError) {EventBus.getDefault().post(new ErrorEvent(volleyError.getMessage()));}
 }

@@ -6,4 +6,8 @@ package com.digitalbuddha.daggerdemo.utils;
 //ErrorEvent
 public class ErrorEvent {
     public String message;
+
+    public ErrorEvent(String message) {
+        this.message = message;
+    }
 }

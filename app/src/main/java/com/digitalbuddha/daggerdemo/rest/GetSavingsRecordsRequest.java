@@ -1,16 +1,14 @@
 package com.digitalbuddha.daggerdemo.rest;
 
 import com.android.volley.Response;
-import com.android.volley.toolbox.RequestFuture;
 
 import java.util.List;
 
 /**
  * Created by MikeN on 9/24/14.
  */
-//Records Request
+//RecordsRequest
 public class GetSavingsRecordsRequest {
-    private RequestFuture future;
     private final Response.Listener success;
     private final Response.ErrorListener error;
     public List savingsTypes;

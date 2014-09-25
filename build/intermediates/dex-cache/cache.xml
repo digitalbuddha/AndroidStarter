@@ -2,40 +2,100 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/patriciaestridge/AndroidStarter/app/build/intermediates/pre-dexed/debug/jackson-mapper-asl-1.9.13-4af336f47862ae104d8d8e5b3683cb1f014c35e3.jar"
-        jar="/Users/patriciaestridge/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.13/1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7/jackson-mapper-asl-1.9.13.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-5b4a688c2edb4d71408f006cbcaf6ab369106f79.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0-rc1/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7"/>
+        sha1="1e9669056e62fa7f81101be3a61e3c6c4fc6e7d7"/>
     <item
-        dex="/Users/patriciaestridge/AndroidStarter/app/build/intermediates/pre-dexed/debug/javax.inject-1-f31a2488ac25d7c3695603975908b53ea0e33ed0.jar"
-        jar="/Users/patriciaestridge/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/gson-2.3-ea3a8c949ebac8f4d2fba4a42cad362a7f4dfd1c.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38"/>
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce"/>
     <item
-        dex="/Users/patriciaestridge/AndroidStarter/app/build/intermediates/pre-dexed/debug/dagger-1.2.1-9303139b42d5357d67dac0802207252d9a815e75.jar"
-        jar="/Users/patriciaestridge/.gradle/caches/modules-2/files-2.1/com.squareup.dagger/dagger/1.2.1/78f96ef00fceee95802930944b1fc4e0e1f9aacc/dagger-1.2.1.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/android-priority-jobqueue-1.1-4481561c86b02cae072c44d38a61e7a2aa2e8b55.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.path/android-priority-jobqueue/1.1/3ef6d63f8d0e5037c022ea12ba6ee8fe31ebc7d7/android-priority-jobqueue-1.1.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="78f96ef00fceee95802930944b1fc4e0e1f9aacc"/>
+        sha1="3ef6d63f8d0e5037c022ea12ba6ee8fe31ebc7d7"/>
     <item
-        dex="/Users/patriciaestridge/AndroidStarter/app/build/intermediates/pre-dexed/debug/jackson-core-asl-1.9.13-64793b66e0c6784c79827a869e31dbbc1f3d63cd.jar"
-        jar="/Users/patriciaestridge/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.13/3c304d70f42f832e0a86d45bd437f692129299a4/jackson-core-asl-1.9.13.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-6ee576d246231f72fdf975b4b9bc8be049eab494.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/support-v13/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/jackson-core-asl-1.9.13-ec50de036af77bded8af54babb23e3aba624819b.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.13/3c304d70f42f832e0a86d45bd437f692129299a4/jackson-core-asl-1.9.13.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="3c304d70f42f832e0a86d45bd437f692129299a4"/>
     <item
-        dex="/Users/patriciaestridge/AndroidStarter/app/build/intermediates/pre-dexed/debug/magicthreads-0.2-release-c657f881a28b462aaffa78ed260d3a0479699425.jar"
-        jar="/Users/patriciaestridge/.gradle/caches/modules-2/files-2.1/co.touchlab/magicthreads/0.2/aebb99202a54114313a63c17ca8c36bfc545c948/magicthreads-0.2-release.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/library-1.0.6-62f831ee6458411c56b004c7ef2eea9231dc3bae.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library/1.0.6/b2e6988baeea1aed656995f973aaa2fc3feaf447/library-1.0.6.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="aebb99202a54114313a63c17ca8c36bfc545c948"/>
+        sha1="b2e6988baeea1aed656995f973aaa2fc3feaf447"/>
     <item
-        dex="/Users/patriciaestridge/AndroidStarter/app/build/intermediates/pre-dexed/debug/retrofit-1.6.1-fdbfb1468d608d90abc1dea67295f37c8ed18e14.jar"
-        jar="/Users/patriciaestridge/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.6.1/efb0a36546aa8857ab8df358b106c1817e03cbee/retrofit-1.6.1.jar"
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/jackson-mapper-asl-1.9.13-debe0fdc3c6bcea12cb604128354e71adc60b0dc.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.13/1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7/jackson-mapper-asl-1.9.13.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="efb0a36546aa8857ab8df358b106c1817e03cbee"/>
+        sha1="1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/butterknife-5.1.1-53d5bf9167fab96404d0ff6013183cfb1a3b70d6.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/5.1.1/b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8/butterknife-5.1.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-rc1-5cd84d89d2a1647d83999656675d8b4884463a9d.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0-rc1/libs/internal_impl-21.0.0-rc1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d1a625e8a94bf7c73e0f9d30ad1b483ff6ea64e9"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-bc46263450b1e9b783b610731cf355e0c9a10f00.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0-rc1/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="14d500eeb7128db6c0f9b55f166c42eacf00f3b6"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-d8e3985539e944989884781191ae180cc61b0252.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0-rc1/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="7ae84435ebc95f67a3f5e511025e96caa8688da2"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-808148e6a6437d6561f8349257d105509b842cd1.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/classes-494890b7cf3f92f3e2c9158d89ad91e1232f1d25.jar"
+        jar="/Users/MikeN/AndroidStarter/build/intermediates/exploded-aar/com.android.support/support-v13/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e128103d5281ddd26195a7f980b36d0d005a4e56"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/eventbus-2.2.1-17ce30a38818ba3021760c8ec89f2bad03d04a1f.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.2.1/a18ff12a9ab5ae52fd30d42f134517997568231e/eventbus-2.2.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a18ff12a9ab5ae52fd30d42f134517997568231e"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/okhttp-1.6.0-9a467e150ccb7080468fcf614e74e8616fd6abc6.jar"
+        jar="/Users/MikeN/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/1.6.0/e32c6b4bee8b61f0de12b337c48df0f5df8caccc/okhttp-1.6.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e32c6b4bee8b61f0de12b337c48df0f5df8caccc"/>
+    <item
+        dex="/Users/MikeN/AndroidStarter/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-rc1-9da56907a54bc62b80b021d0066dc3e5625c73ba.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0-rc1/support-annotations-21.0.0-rc1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="57c343f05b73b923bf2502b05851dbfe12193dcb"/>
 
 </pre-dex-items>
