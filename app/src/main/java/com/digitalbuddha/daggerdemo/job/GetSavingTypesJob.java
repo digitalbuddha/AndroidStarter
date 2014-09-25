@@ -1,5 +1,6 @@
 package com.digitalbuddha.daggerdemo.job;
 
+import com.digitalbuddha.daggerdemo.model.SavingsType;
 import com.google.gson.Gson;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
@@ -12,6 +13,8 @@ import de.greenrobot.event.EventBus;
  * Created by MikeN on 9/8/14.
  */
 public class GetSavingTypesJob extends Job {
+
+    public List<SavingsType> savingsTypes;
 
     public GetSavingTypesJob() {
 //        super(new Params(2)
@@ -26,7 +29,7 @@ public class GetSavingTypesJob extends Job {
 
     @Override
     public void onRun() throws Throwable {
-        List savingsTypes=new Gson().fromJson(json, List.class);
+        savingsTypes = new Gson().fromJson(json, List.class);
         EventBus.getDefault().post(this); //post the job instead of making dummy event pojos
     }
     //
