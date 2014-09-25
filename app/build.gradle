@@ -32,12 +32,15 @@ android {
         exclude 'META-INF/LGPL2.1'
     }
 }
+apply plugin: 'android-unit-test'
 
 
 dependencies
         {
 
             compile 'com.mcxiaoke.volley:library:1.0.6'
+            compile 'com.squareup.okhttp:okhttp:1.6.0'
+
             provided 'com.squareup.dagger:dagger-compiler:1.2.1'
             compile 'com.squareup.dagger:dagger:1.2.1'
             compile 'com.squareup.retrofit:retrofit:1.6.1'
@@ -56,5 +59,8 @@ dependencies
             compile 'com.android.support:recyclerview-v7:+'
             compile 'com.android.support:palette-v7:+'
 
+            androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3'
+            testCompile 'junit:junit:4.10'
+            testCompile 'org.robolectric:robolectric:2.+'
 
         }
