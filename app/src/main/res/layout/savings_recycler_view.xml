@@ -16,7 +16,7 @@
             android:background="@color/white"
             android:elevation="5dp" />
 
-        <com.digitalbuddha.daggerdemo.ui.utils.typeface.TypefaceTextView
+        <com.digitalbuddha.gdg.ui.utils.typeface.TypefaceTextView
             android:id="@+id/saving_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
             android:background="@color/white_opacity"
             />
 
-            <com.digitalbuddha.daggerdemo.ui.utils.typeface.TypefaceTextView
+            <com.digitalbuddha.gdg.ui.utils.typeface.TypefaceTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
