@@ -44,10 +44,12 @@ public class SavingActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saving_phone);
         ButterKnife.inject(this);
+
+        EventBus.getDefault().register(this);
+
         createRecyclerView();
         createTopPager();
 
-        EventBus.getDefault().register(this);
         new TypefaceActionBar(this, "Where Can You Save?");
     }
 

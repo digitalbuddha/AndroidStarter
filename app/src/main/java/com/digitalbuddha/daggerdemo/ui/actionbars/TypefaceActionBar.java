@@ -2,7 +2,6 @@ package com.digitalbuddha.daggerdemo.ui.actionbars;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.graphics.drawable.ColorDrawable;
 import android.widget.TextView;
 
 import com.digitalbuddha.daggerdemo.activitygraphs.R;
@@ -21,9 +20,6 @@ public class TypefaceActionBar
 
     private void initActionBar() {
         ActionBar actionBar = activity.getActionBar();
-
-        actionBar.setBackgroundDrawable(new ColorDrawable(R.color.theme_blue));
-
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setCustomView(R.layout.action_bar);

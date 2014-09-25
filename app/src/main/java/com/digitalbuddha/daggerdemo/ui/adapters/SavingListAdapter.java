@@ -55,10 +55,6 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         viewHolder.text.setText(item.getSavingsType().getTitle());
         viewHolder.image.setImageUrl(item.getSavingsType().getIconUrl(), MyVolley.getImageLoader());
 
-        viewHolder.backIcon.setImageUrl(item.getSavingsType().getBack(), MyVolley.getImageLoader());
-        viewHolder.acceptIcon.setImageUrl(item.getSavingsType().getAccept(), MyVolley.getImageLoader());
-
-        viewHolder.nextIcon.setImageDrawable(null);
         if (i == 0) {
             viewHolder.nextIcon.setImageUrl(item.getSavingsType().getNext(), MyVolley.getImageLoader());
             TranslateAnimation anim = bounceFromAbove();
@@ -68,7 +64,6 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         }
         nextOnClick(viewHolder);
 
-        viewHolder.deleteIcon.setImageDrawable(null);
         if (i == 0) {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -90,7 +85,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         });
 
         createColorBackground(viewHolder, item);
-        setNumberPickers(viewHolder);
+        setNumberPickers(viewHolder, item);
         backOnClick(viewHolder);
 
     }
@@ -102,24 +97,13 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         String[] colorStringArray = colorString.split("");
         StringBuilder fiftyOpacity = new StringBuilder();
 
+        //Change hex color string to 50% opacity
         for (int j = 0; j < colorStringArray.length; j++)
         {
-            if (j == 2)
-            {
-                colorStringArray[j] = "B";
-            }
-
-            if (j == 3)
-            {
-                colorStringArray[j] = "3";
-            }
-
-            if (j > 0)
-            {
-                fiftyOpacity.append(colorStringArray[j]);
-            }
+            if (j == 2) { colorStringArray[j] = "B"; }
+            if (j == 3) { colorStringArray[j] = "3"; }
+            if (j > 0) { fiftyOpacity.append(colorStringArray[j]); }
         }
-
         colorString = fiftyOpacity.toString();
         viewHolder.sliderView.setBackgroundColor(Color.parseColor(colorString));
     }
@@ -175,7 +159,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         });
     }
 
-    private void setNumberPickers(ViewHolder viewHolder)
+    private void setNumberPickers(ViewHolder viewHolder, SavingRecord item)
     {
         viewHolder.frequency.setMaxValue(25);
         viewHolder.frequency.setMinValue(0);
