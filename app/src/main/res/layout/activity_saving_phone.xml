@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/theme_background">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/savings_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="190dp"
+        tools:context="com.thebiggestsaver.activities.SavingActivity"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/signup_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

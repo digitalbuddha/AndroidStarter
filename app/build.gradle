@@ -44,6 +44,8 @@ dependencies
             compile 'com.jakewharton:butterknife:5.1.1'
             compile 'com.path:android-priority-jobqueue:1.1'
 
+            compile(group: 'co.touchlab', name: 'magicthreads', version: '0.2', classifier: 'release')
+            compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
 
             // You must install or update the Support Repository through the SDK manager to use this dependency.
             compile 'com.android.support:support-v13:20.+'
@@ -53,6 +55,7 @@ dependencies
             //paddys gradle dependencies for l stuff
             compile 'com.android.support:recyclerview-v7:+'
             compile 'com.android.support:palette-v7:+'
+            compile 'com.android.support:appcompat-v7:20.+'
 
             androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3'
             testCompile 'junit:junit:4.10'

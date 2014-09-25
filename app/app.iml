@@ -89,6 +89,7 @@
     <orderEntry type="library" exported="" name="support-v4-21.0.0-rc1" level="project" />
     <orderEntry type="library" exported="" name="palette-v7-21.0.0-rc1" level="project" />
     <orderEntry type="library" exported="" name="magicthreads-0.2-release" level="project" />
+    <orderEntry type="library" exported="" name="library-1.0.6" level="project" />
     <orderEntry type="library" exported="" name="dagger-compiler-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="jackson-core-asl-1.9.13" level="project" />
     <orderEntry type="library" exported="" name="eventbus-2.2.1" level="project" />

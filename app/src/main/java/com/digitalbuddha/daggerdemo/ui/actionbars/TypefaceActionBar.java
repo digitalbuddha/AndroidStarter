@@ -2,16 +2,17 @@ package com.digitalbuddha.daggerdemo.ui.actionbars;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.drawable.ColorDrawable;
 import android.widget.TextView;
 
 import com.digitalbuddha.daggerdemo.activitygraphs.R;
 
-public class BackBar
+public class TypefaceActionBar
 {
     private Activity activity;
     private String titleString;
 
-    public BackBar(Activity activity, String title)
+    public TypefaceActionBar(Activity activity, String title)
     {
         this.activity = activity;
         this.titleString = title;
@@ -20,6 +21,8 @@ public class BackBar
 
     private void initActionBar() {
         ActionBar actionBar = activity.getActionBar();
+
+        actionBar.setBackgroundDrawable(new ColorDrawable(R.color.theme_blue));
 
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowCustomEnabled(true);
