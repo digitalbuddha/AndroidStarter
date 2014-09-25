@@ -13,21 +13,24 @@ import de.greenrobot.event.EventBus;
  */
 public abstract class AbstractVolleyJob extends Job implements  Response.ErrorListener {
 
+    private String errorMessage;
+
     public AbstractVolleyJob(Params params) {super(params);}
 
     //Job override methods
     @Override
     public void onAdded() {}
     @Override
-    protected boolean shouldReRunOnThrowable(Throwable throwable) {return false;}
+    protected boolean shouldReRunOnThrowable(Throwable throwable) {
+        errorMessage = throwable.getMessage();
+        return false;
+    }
     @Override
-    protected void onCancel() { EventBus.getDefault().post(new ErrorEvent());}
-
-    //volley callbacks
-    @Override
-    public void onResponse(Object o) {
-        EventBus.getDefault().post(this);}
-
+    protected void onCancel() {
+        ErrorEvent errorEvent = new ErrorEvent();
+        errorEvent.message=errorMessage;
+        EventBus.getDefault().post(errorEvent);
+    }
     @Override
     public void onErrorResponse(VolleyError volleyError) {EventBus.getDefault().post(new ErrorEvent());}
 }

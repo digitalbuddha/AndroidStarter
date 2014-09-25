@@ -17,11 +17,14 @@ package com.digitalbuddha.daggerdemo;
 
 import android.app.Application;
 
+import com.digitalbuddha.daggerdemo.utils.MyVolley;
 
 
 public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        MyVolley.init(getApplicationContext());
+
     }
 }

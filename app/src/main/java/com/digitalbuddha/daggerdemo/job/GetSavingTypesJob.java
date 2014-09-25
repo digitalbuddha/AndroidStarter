@@ -30,6 +30,7 @@ public class GetSavingTypesJob extends AbstractVolleyJob implements Response.Lis
     public void onRun() throws Throwable {
         SavingsTypesRequest savingsTypesRequest = new SavingsTypesRequest(this, this);
         savingsTypesRequest.invoke();
+
     }
     //volley callbacks
     @Override

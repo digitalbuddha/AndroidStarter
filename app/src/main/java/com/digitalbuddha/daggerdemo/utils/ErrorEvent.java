@@ -5,5 +5,5 @@ package com.digitalbuddha.daggerdemo.utils;
  */
 //ErrorEvent
 public class ErrorEvent {
-    String message;
+    public String message;
 }
