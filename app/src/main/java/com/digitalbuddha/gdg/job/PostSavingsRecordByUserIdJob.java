@@ -1,7 +1,6 @@
 package com.digitalbuddha.gdg.job;
 
 import com.android.volley.Response;
-import com.digitalbuddha.gdg.model.SavingRecord;
 import com.digitalbuddha.gdg.rest.PostSavingsRecordsRequest;
 import com.digitalbuddha.gdg.utils.AbstractVolleyJob;
 import com.path.android.jobqueue.Params;
@@ -12,7 +11,7 @@ import java.util.List;
  * Created by MikeN on 9/8/14.
  */
 //PostSavingsClass
-public class PostSavingsRecordByUserIdJob extends AbstractVolleyJob implements Response.Listener<List<SavingRecord>>{
+public class PostSavingsRecordByUserIdJob extends AbstractVolleyJob implements Response.Listener<List>{
     private int userId;
     private int typeId;
 
@@ -32,7 +31,7 @@ public class PostSavingsRecordByUserIdJob extends AbstractVolleyJob implements R
     }
     //PostRecordsResponse
     @Override
-    public void onResponse(List<SavingRecord> response) {
+    public void onResponse(List response) {
 
     }
 }

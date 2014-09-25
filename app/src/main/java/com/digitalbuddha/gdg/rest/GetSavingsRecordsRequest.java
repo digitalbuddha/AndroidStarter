@@ -6,7 +6,6 @@ import com.android.volley.Response;
 import com.digitalbuddha.gdg.model.SavingRecord;
 import com.digitalbuddha.gdg.utils.GsonRequest;
 import com.digitalbuddha.gdg.utils.MyVolley;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 
@@ -29,7 +28,7 @@ public class GetSavingsRecordsRequest {
     public void invoke() {
         GsonRequest request = new GsonRequest<List<SavingRecord>>(Request.Method.GET,
                 RECORDS_URL,
-                new TypeToken<List<SavingRecord>>() {}.getType(),
+                List.class,
                 success,
                 error);
         request.setSoftTTLDefault(24 * 60 * 60 * 1000); //pull from cache if not invalidated for 1 week
