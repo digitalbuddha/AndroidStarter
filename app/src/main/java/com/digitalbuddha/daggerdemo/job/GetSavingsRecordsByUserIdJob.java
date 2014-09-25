@@ -8,22 +8,21 @@ import java.util.List;
 /**
  * Created by MikeN on 9/8/14.
  */
-public class GetSavingsRecordsByUserIdJob extends VolleyJob {
+//GetSavingsRecordJob
+public class GetSavingsRecordsByUserIdJob extends AbstractVolleyJob {
     private int userId;
+    public List savingsTypes;
 
-    //TODO add retry count;
+    //constructor
     public GetSavingsRecordsByUserIdJob(int userId) {
-//        super(new Params(2)
-//                .requireNetwork()
-//                .groupBy("Repos"));
         super(new Params(0));
         this.userId = userId;
     }
+    //Get Savings Records using volley
     @Override
     public void onRun() throws Throwable {
-        String url = "Google.com";
-        GetSavingsRecordsRequest savingsRecordsRequest = new GetSavingsRecordsRequest(this, this, url);
+        GetSavingsRecordsRequest savingsRecordsRequest = new GetSavingsRecordsRequest(this, this);
         savingsRecordsRequest.invoke();
-        List savingsTypes = savingsRecordsRequest.savingsTypes;
+        savingsTypes = savingsRecordsRequest.savingsTypes;
     }
 }

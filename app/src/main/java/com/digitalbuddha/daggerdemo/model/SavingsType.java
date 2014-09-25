@@ -6,6 +6,7 @@ import java.util.Map;
 /**
  * Created by MikeN on 9/24/14.
  */
+//SavingsTypeModel
 public class SavingsType {
 
     private String accept;

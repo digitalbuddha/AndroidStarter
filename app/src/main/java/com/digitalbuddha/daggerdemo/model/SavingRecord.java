@@ -3,6 +3,7 @@ package com.digitalbuddha.daggerdemo.model;
 /**
  * Created by patriciaestridge on 9/24/14.
  */
+//SavingsRecord Model
 public class SavingRecord {
 
     private String id;

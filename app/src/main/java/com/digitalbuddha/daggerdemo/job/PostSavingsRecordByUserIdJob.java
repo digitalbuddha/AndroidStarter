@@ -3,26 +3,25 @@ package com.digitalbuddha.daggerdemo.job;
 import com.digitalbuddha.daggerdemo.rest.PostSavingsRecordsRequest;
 import com.path.android.jobqueue.Params;
 
-import java.util.List;
-
 /**
  * Created by MikeN on 9/8/14.
  */
-public class PostSavingsRecordByUserIdJob extends VolleyJob {
+//PostSavingsClass
+public class PostSavingsRecordByUserIdJob extends AbstractVolleyJob {
     private int userId;
+    private int typeId;
 
-    //TODO add retry count;
-    public PostSavingsRecordByUserIdJob(int userId) {
-//        super(new Params(2)
-//                .requireNetwork()
-//                .groupBy("PostSavingsRecord"));
-        super(new Params(0));
+    //PostConstructor
+    public PostSavingsRecordByUserIdJob(int userId, int typeId) {
+        super(new Params(2)
+                .requireNetwork()
+                .groupBy("PostSavingsRecord"));
         this.userId = userId;
     }
+    //PostSavingsRun
     @Override
     public void onRun() throws Throwable {
-        PostSavingsRecordsRequest savingsRecordsRequest = new PostSavingsRecordsRequest(this, this);
+        PostSavingsRecordsRequest savingsRecordsRequest = new PostSavingsRecordsRequest(this, this,userId,typeId);
         savingsRecordsRequest.invoke();
-        List savingsTypes = savingsRecordsRequest.savingsTypes;
     }
 }

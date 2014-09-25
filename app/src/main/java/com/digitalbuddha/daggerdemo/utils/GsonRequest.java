@@ -1,7 +1,6 @@
 package com.digitalbuddha.daggerdemo.utils;
 
 
-
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
@@ -19,7 +18,9 @@ import java.util.Map;
 
 /**
  * Volley adapter for JSON requests with POST method that will be parsed into Java objects by Gson.
+ * Added custom cache policy and set header public method
  */
+//GSON Request
 public class GsonRequest<T> extends Request<T> {
     private Gson mGson = new Gson();
     protected Class<T> clazz;
@@ -142,5 +143,9 @@ public class GsonRequest<T> extends Request<T> {
             cacheHit = false;
         }
         Log.d("Volley",tag);
+    }
+
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
     }
 }
