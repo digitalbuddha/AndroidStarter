@@ -131,7 +131,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
             public void onClick(final View view) {
 
                 TranslateAnimation anim = new TranslateAnimation(0, 1200, 0, 0);
-                anim.setDuration(1000);
+                anim.setDuration(500);
                 anim.setInterpolator(new LinearInterpolator());
                 anim.setRepeatCount(0);
                 anim.setFillAfter(false);
@@ -165,7 +165,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
                 viewHolder.savingsView.setVisibility(View.VISIBLE);
 
                 TranslateAnimation anim = new TranslateAnimation(1000, 0, 0, 0);
-                anim.setDuration(1000);
+                anim.setDuration(500);
                 anim.setInterpolator(new LinearInterpolator());
                 anim.setRepeatCount(0);
                 anim.setFillAfter(false);
@@ -225,7 +225,7 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
         });
     }
 
-    private void createMultiplierPicker(ViewHolder viewHolder, final SavingRecord item)
+    private void createMultiplierPicker(final ViewHolder viewHolder, final SavingRecord item)
     {
         viewHolder.frequency.setMaxValue(25);
         viewHolder.frequency.setMinValue(0);
@@ -234,14 +234,14 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i2)
             {
-                item.setMultiplier(numberPicker.getValue());
+                item.setMultiplier(viewHolder.frequency.getValue());
             }
         });
     }
 
     private TranslateAnimation bounceFromAbove() {
         TranslateAnimation bounceAnim = new TranslateAnimation(0, 0, -1000, 0);
-        bounceAnim.setDuration(1000);
+        bounceAnim.setDuration(500);
         bounceAnim.setInterpolator(new BounceInterpolator());
         bounceAnim.setRepeatCount(0);
         bounceAnim.setFillAfter(false);
@@ -254,16 +254,15 @@ public class SavingListAdapter extends RecyclerView.Adapter<SavingListAdapter.Vi
 
         TranslateAnimation movingLeft = new TranslateAnimation(940, 0, 0, 0);
         movingLeft.setFillAfter(true);
-        movingLeft.setDuration(2000);
+        movingLeft.setDuration(1000);
         movingLeft.setRepeatCount(0);
 
         RotateAnimation rolling = new RotateAnimation(359, 0, Animation.RELATIVE_TO_SELF, 0.5255f,
                 Animation.RELATIVE_TO_SELF, 0.5255f);
-        rolling.setDuration(400);
+        rolling.setDuration(200);
         rolling.setInterpolator(new LinearInterpolator());
         rolling.setFillAfter(false);
         rolling.setRepeatCount(3);
-
         rollingLeft.addAnimation(rolling);
         rollingLeft.addAnimation(movingLeft);
         return rollingLeft;
