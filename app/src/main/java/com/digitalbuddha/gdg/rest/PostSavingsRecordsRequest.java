@@ -22,7 +22,7 @@ public class PostSavingsRecordsRequest {
     private final Response.ErrorListener error;
     private int userId;
     private SavingRecord record;
-    private String url = "BaseURL/savingsrecord"+userId;
+    private String url = "BaseURL/savingsrecord"+userId; //fake url until I can get web service up
 
     public PostSavingsRecordsRequest(Response.Listener success, Response.ErrorListener error, int userId, SavingRecord record) {
         this.success = success;
@@ -36,6 +36,8 @@ public class PostSavingsRecordsRequest {
         Map params = new HashMap<String, Object>();
         params.put("record", record);
         //invalidate cache for getSavingsRecordRequest;
+        MyVolley.getRequestQueue().getCache().remove(GetSavingsRecordsRequest.RECORDS_URL);
+        
         GsonRequest request = new GsonRequest<List<SavingsType>>(Request.Method.POST, url, new TypeToken<List<SavingsType>>(){}.getType(), params, success, error);
         request.setRetryPolicy(new DefaultRetryPolicy(30000, 3, 1));
         request.setShouldCache(false);
