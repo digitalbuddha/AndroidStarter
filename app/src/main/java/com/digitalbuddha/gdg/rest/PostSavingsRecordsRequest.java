@@ -35,8 +35,7 @@ public class PostSavingsRecordsRequest {
     public void invoke() {
         Map params = new HashMap<String, Object>();
         params.put("record", record);
-        //invalidate cache for getSavingsRecordRequest;
-        MyVolley.getRequestQueue().getCache().remove(GetSavingsRecordsRequest.RECORDS_URL);
+      
         
         GsonRequest request = new GsonRequest<List<SavingsType>>(Request.Method.POST, url, new TypeToken<List<SavingsType>>(){}.getType(), params, success, error);
         request.setRetryPolicy(new DefaultRetryPolicy(30000, 3, 1));
