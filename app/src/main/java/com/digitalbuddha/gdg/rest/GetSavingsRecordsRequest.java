@@ -27,6 +27,7 @@ public class GetSavingsRecordsRequest {
 
     //GetRecordsRequestInvoke
     public void invoke() {
+        //TODO: serialization is failed, need to fix, for now use other Get Request as example.
         GsonRequest request = new GsonRequest<List<SavingRecord>>(Request.Method.GET,
                 RECORDS_URL,
                 new TypeToken<List<SavingRecord>>() {}.getType(),
