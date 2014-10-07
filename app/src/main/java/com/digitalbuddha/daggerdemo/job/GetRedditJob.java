@@ -7,9 +7,12 @@ import com.android.volley.toolbox.RequestFuture;
 import com.digitalbuddha.daggerdemo.dagger.ForActivity;
 import com.digitalbuddha.daggerdemo.toolbox.CustomVolley;
 import com.digitalbuddha.daggerdemo.toolbox.GsonRequest;
+import com.digitalbuddha.daggerdemo.toolbox.JsonParser;
 import com.digitalbuddha.daggerdemo.toolbox.ObjectVolley;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
+
+import org.json.JSONObject;
 
 import java.util.Map;
 
@@ -26,7 +29,8 @@ public class GetRedditJob extends Job {
     Context context;
     @Inject
     CustomVolley volley;
-
+    @Inject
+    JsonParser parser;
     public Map map;
 
     public GetRedditJob() {
@@ -50,7 +54,8 @@ public class GetRedditJob extends Job {
         map = future.get();
 
         //Another method of doing api calls using keep-it-simple wrapper class.
-        ObjectVolley.get(url);
+        JSONObject jsonObject = ObjectVolley.get(url);
+        Map anotherMap = (Map) parser.convertJsonToObject(jsonObject, Map.class);
         EventBus.getDefault().post(this);
     }
 
