@@ -1,4 +1,4 @@
-package com.digitalbuddha.daggerdemo.utils;
+package com.digitalbuddha.daggerdemo.toolbox;
 
 
 import org.json.JSONArray;

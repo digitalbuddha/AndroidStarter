@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.digitalbuddha.daggerdemo.utils;
+package com.digitalbuddha.daggerdemo.toolbox;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;

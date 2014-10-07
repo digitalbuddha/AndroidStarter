@@ -19,7 +19,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.digitalbuddha.daggerdemo.DemoApplication;
-import com.digitalbuddha.daggerdemo.utils.ErrorEvent;
+import com.digitalbuddha.daggerdemo.toolbox.ErrorEvent;
 import com.path.android.jobqueue.JobManager;
 
 import java.util.Arrays;

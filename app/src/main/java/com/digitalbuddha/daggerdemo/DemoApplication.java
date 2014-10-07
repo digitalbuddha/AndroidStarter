@@ -18,7 +18,9 @@ package com.digitalbuddha.daggerdemo;
 import android.app.Application;
 
 import com.digitalbuddha.daggerdemo.dagger.AndroidModule;
-import com.digitalbuddha.daggerdemo.utils.CustomVolley;
+import com.digitalbuddha.daggerdemo.toolbox.ArrayVolley;
+import com.digitalbuddha.daggerdemo.toolbox.CustomVolley;
+import com.digitalbuddha.daggerdemo.toolbox.ObjectVolley;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +35,9 @@ public class DemoApplication extends Application {
 
     applicationGraph = ObjectGraph.create(getModules().toArray());
       CustomVolley.getInstance().init(this);
+      ObjectVolley.init(this);
+      ArrayVolley.init(this);
+
   }
 
   /**

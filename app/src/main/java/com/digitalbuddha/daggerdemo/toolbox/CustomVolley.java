@@ -1,4 +1,4 @@
-package com.digitalbuddha.daggerdemo.utils;
+package com.digitalbuddha.daggerdemo.toolbox;
 
 import android.content.Context;
 import android.util.Log;

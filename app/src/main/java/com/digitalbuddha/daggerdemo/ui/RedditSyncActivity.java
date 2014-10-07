@@ -41,6 +41,5 @@ public class RedditSyncActivity extends DemoBaseActivity {
     public void  onEventMainThread(GetRedditJob job)
     {
         Map map = job.map;
-
     }
 }

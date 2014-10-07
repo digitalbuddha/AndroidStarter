@@ -1,4 +1,4 @@
-package com.digitalbuddha.daggerdemo.utils;
+package com.digitalbuddha.daggerdemo.toolbox;
 
 /**
  * Created by Nakhimovich on 8/13/14.
